@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tech Mania</title>
+        <link rel="stylesheet" href="tech.css">
+    </head>
+    <body>
+        <div class="events">
+            <!--<video autoplay loop muted plays.inline class="back-video">
+                <source src="img/video1.mp4" type="video/mp4">
+            </video>-->
+            <nav>
+                <img src="img/logo.png" class="logo">
+                <div class="menu">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="cards.html">EVENTS</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="content">
+                <img src="img/saves3.png" class="logo">
+                <div class="name">
+                    <h4>CSE</h4>
+                </div>
+                <h1>TECH MANIA-23</h1>
+                <h3>National level Technical symposium</h3>
+                <a href="https://forms.gle/Xjbe8vmoq5EmwxL6A">REGISTER</a>
+            </div>
+            <div class="count">
+                <div>
+                    <p id="Days">00</p>
+                    <span>Days</span>
+                </div>
+                <div>
+                    <p>:</p>
+                </div>
+                <div>
+                    <p id="Hours">00</p>
+                    <span>Hours</span>
+                </div>
+                <div>
+                    <p>:</p>
+                </div>
+                <div>
+                    <p id="Minutes">00</p>
+                    <span>Minutes</span>
+                </div>
+                <div>
+                    <p>:</p>
+                </div>
+                <div>
+                    <p id="Seconds">00</p>
+                    <span>Seconds</span>
+                </div>
+            </div>
+        </div>
+        <script>
+            //Set the date we're counting down to (replace with your desired date)
+            const countDownDate = new Date("2023-10-04T09:00:00").getTime();
+
+            // Update the countdown every 1 second
+            const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("Days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("Hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("Minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("Seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.querySelector('.count').innerHTML = "EXPIRED";
+            }
+            }, 1000);
+        </script>
+    </body>
+
+</html>
